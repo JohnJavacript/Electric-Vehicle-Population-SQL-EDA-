@@ -1,9 +1,5 @@
---  Calculate the cummulative total electric range over time -- 
-     SELECT
-      [Model Year]
-    
-      ,[Electric Range],
-      SUM([Electric Range]) OVER (ORDER BY [Model Year]) AS CummmulativeElectricRange
-    
+--  show the average electric range alongside the actual electric range -- 
+   
+SELECT * ,  AVG([Electric Range]) over() as average_electric_range
+	 
   FROM [Electric Vehicle Population Dataset].[dbo].[Electric_Vehicle_Population_Dat$]
-  ORDER BY    [Model Year]
